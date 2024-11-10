@@ -44,6 +44,10 @@ h1 {
   margin: 0;
 }
 
+.hamburger ~ .nav-links {
+  background-color: transparent;
+}
+
 .nav-links a {
   display: block;
   text-align: center;
@@ -72,7 +76,7 @@ html.dark {
   color: #fff;
 }
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 39em) {
   .nav-links {
     margin-left: 5em;
     display: block;

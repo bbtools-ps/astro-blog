@@ -11,9 +11,11 @@ const username = "bbtools-ps";
       href={`https://www.${platform}.com/${username}`}>{platform}</a
     >!
   </p>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <div class="social">
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+  </div>
 </footer>
 
 <style>
@@ -24,5 +26,17 @@ const username = "bbtools-ps";
   }
   html.dark a {
     color: #fff;
+  }
+
+  .social {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 39em) {
+    footer {
+      flex-direction: column;
+    }
   }
 </style>
