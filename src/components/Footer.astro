@@ -6,7 +6,11 @@ const username = "bbtools-ps";
 ---
 
 <footer>
-  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+  <p>
+    Learn more about my projects on <a
+      href={`https://www.${platform}.com/${username}`}>{platform}</a
+    >!
+  </p>
   <Social platform="twitter" username="astrodotbuild" />
   <Social platform="github" username="withastro" />
   <Social platform="youtube" username="astrodotbuild" />
@@ -17,5 +21,8 @@ const username = "bbtools-ps";
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+  }
+  html.dark a {
+    color: #fff;
   }
 </style>

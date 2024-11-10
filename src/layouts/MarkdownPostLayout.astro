@@ -1,38 +1,59 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-    frontmatter: {
-        title: string;
-        author: string;
-        pubDate: Date;
-        tags?: string[];
-    }
+  frontmatter: {
+    title: string;
+    author: string;
+    pubDate: Date;
+    tags?: string[];
+  };
 }
 
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>Written by: {frontmatter.author} on {frontmatter.pubDate}</p>
-    <slot />
-    {frontmatter.tags?.length && <ul>{frontmatter.tags.map((tag)=> <li class="tag"><a href={`/tags/${tag}`}>{tag}</a></li>)}</ul>}
+  <p>
+    Written by: {frontmatter.author} on {
+      frontmatter.pubDate.toString().slice(0, 10)
+    }
+  </p>
+  <slot />
+  {
+    frontmatter.tags?.length && (
+      <ul>
+        {frontmatter.tags.map((tag) => (
+          <li class="tag">
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </BaseLayout>
 
-
 <style>
-    ul {
-        list-style: none;
-        display: flex;
-        gap: 0.5rem;
-        padding: 0;
-    }
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: .5em;
-        padding: .5em 1em;
-        font-size: 1.15em;
-        background-color: #F8FCFD;
-    }
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+  }
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+  html.dark .tag {
+    background-color: transparent;
+    border-color: #90caf9;
+    color: #e0e0e0;
+  }
+  html.dark a {
+    color: #90caf9;
+  }
 </style>
