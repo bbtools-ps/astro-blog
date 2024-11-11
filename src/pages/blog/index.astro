@@ -2,8 +2,9 @@
 import BlogPost from "@/components/BlogPost.astro";
 import "@/styles/global.css";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { Post } from "../tags/[tag].astro";
 
-const allPosts = await Astro.glob("./*.md");
+const allPosts: Post[] = await Astro.glob("./*.md");
 
 const pageTitle = "My Astro learning blog";
 ---
