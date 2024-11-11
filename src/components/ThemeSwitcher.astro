@@ -2,7 +2,7 @@
 
 ---
 
-<button type="button" id="themeToggle">
+<button type="button" id="theme-toggle" aria-label="Switch theme">
   <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
@@ -18,7 +18,7 @@
 </button>
 
 <style>
-  #themeToggle {
+  #theme-toggle {
     border: 0;
     background: none;
     display: flex;
@@ -67,6 +67,6 @@
   };
 
   document
-    .getElementById("themeToggle")
+    .getElementById("theme-toggle")
     .addEventListener("click", handleToggleClick);
 </script>
