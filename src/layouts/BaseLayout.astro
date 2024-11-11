@@ -4,10 +4,14 @@ import "@/styles/global.css";
 import Footer from "@/components/Footer.astro";
 
 interface Props {
-  pageTitle: string;
+  title?: string;
+  description?: string;
 }
 
-const { pageTitle } = Astro.props;
+const {
+  title = "Astro Blog",
+  description = `Pull content from anywhere and serve it fast with Astro's next-gen island architecture.`,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -16,12 +20,13 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
   <body>
     <Header />
     <main>
-      <h1>{pageTitle}</h1>
+      <h1>{title}</h1>
       <slot />
     </main>
     <Footer />

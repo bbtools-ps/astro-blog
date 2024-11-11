@@ -13,7 +13,7 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout title={frontmatter.title}>
   <p>
     Written by: {frontmatter.author} on {
       frontmatter.pubDate.toString().slice(0, 10)

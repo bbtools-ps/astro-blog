@@ -9,7 +9,7 @@ const allPosts: Post[] = await Astro.glob("./*.md");
 const pageTitle = "My Astro learning blog";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout title={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
   <ul>
     {
